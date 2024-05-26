@@ -26,7 +26,7 @@ mods:
   - "https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077" # Harmony
 ```
 
-> [!ВАЖНО]
+> [!IMPORTANT]
 > Если название файла будет начинаться с `!`, то он будет проигнорирован!
 >
 > Например `!rimworld.yml`
