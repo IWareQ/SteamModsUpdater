@@ -26,10 +26,11 @@ def get_workshop_game_id_from_url(workshop_game_url: Any) -> int:
     if not isinstance(workshop_game_url, str):
         raise ValueError(f"Это не строка: {workshop_game_url}")
 
-    parsed_url = parse.urlparse(workshop_game_url)
-    _, app_id, _ = parsed_url.path.split("/")
     try:
-        return int(app_id)
+        parsed_url = parse.urlparse(workshop_game_url)
+        for path in parsed_url.path.split("/"):
+            if path.isdecimal():
+                return int(path)
     except KeyError:
         raise ValueError(f"Невозможно получить App ID из {workshop_game_url}")
 
